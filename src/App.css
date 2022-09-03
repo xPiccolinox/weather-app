@@ -27,11 +27,3 @@
   height: 60vh;
   filter: opacity(0);
 }
-.weatherMenu {
-  background-color: red;
-  display: block;
-  position: absolute;
-  right: 0;
-  width: 10vw;
-  height: 70vh;
-}

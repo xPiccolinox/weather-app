@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Menu from './Menu/Menu';
+import WeatherMenu from './WeatherMenu/WeatherMenu';
 
 function App() {
 
@@ -16,9 +17,7 @@ function App() {
         <div className="weather">
 
         </div>
-        <div className="weatherMenu">
-
-        </div>
+        <WeatherMenu />
       </div>
     </BrowserRouter>
   );

@@ -1,0 +1,55 @@
+:root {
+  --cornerSize: 6vw;
+  --cornerSizeDiagonal: calc(var(--cornerSize) * 1.414);
+}
+
+.weatherMenu {
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 4vw;
+  height: 64vh;
+  transition: 0.2s ease-in-out;
+}
+.weatherMenuBg {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: opacity(0.4)
+}
+.weatherMenuBgLeft {
+  background-color: #fff;
+  position: absolute;
+  left: var(--cornerSize);
+  width: calc(20vw - var(--cornerSize));
+  height: 100%;
+}
+.weatherMenuBgRight {
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  width: 20vw;
+  height: calc(100% - var(--cornerSize) * 2);
+}
+.weatherMenuBgTop {
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--cornerSize);
+  height: var(--cornerSize);
+  border-radius: calc(var(--cornerSize) * 0.35);
+  transform: translate(50%, 50%) rotate(45deg) scale(1.78);
+}
+.weatherMenuBgBottom {
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: var(--cornerSize);
+  height: var(--cornerSize);
+  border-radius: calc(var(--cornerSize) * 0.35);
+  transform: translate(50%, -50%) rotate(45deg) scale(1.78);
+}
