@@ -1,0 +1,8 @@
+.weatherTile {
+  background-color: #eee;
+  display: block;
+  flex-shrink: 0;
+  position: relative;
+  width: 26%;
+  height: 100%;
+}
