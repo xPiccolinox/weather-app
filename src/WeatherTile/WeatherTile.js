@@ -1,9 +1,11 @@
 import './WeatherTile.css'
 
-const WeatherTile = () => {
-  return(
-    <div className="weatherTile">
+const WeatherTile = (props) => {
+  const className=`weatherTile tileId_${props.id}`
 
+  return(
+    <div className={className}>
+      
     </div>
   )
 }

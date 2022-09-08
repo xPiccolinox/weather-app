@@ -14,9 +14,9 @@ function App() {
 
         </div>
         <div className="WeatherTiles">
-          <WeatherTile />
-          <WeatherTile />
-          <WeatherTile />
+          <WeatherTile id={1}/>
+          <WeatherTile id={2}/>
+          <WeatherTile id={3}/>
         </div>
         {/* <div className="searchBar">
 

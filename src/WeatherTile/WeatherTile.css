@@ -5,4 +5,15 @@
   position: relative;
   width: 26%;
   height: 100%;
+  border-radius: 0.5vw;
+  box-shadow: 0px 0px 16px -2px #000;
+}
+.tileId_1 {
+  background: linear-gradient(180deg, rgba(108,230,242,1) 0%, rgba(240,237,202,1) 60%, rgba(108,230,242,1) 160%);
+}
+.tileId_2 {
+  background: linear-gradient(180deg, rgba(143,77,124,1) 0%, rgba(204,147,188,1) 60%, rgba(143,77,124,1) 160%);
+}
+.tileId_3 {
+  background: linear-gradient(180deg, rgba(18,7,97,1) 0%, rgba(59,24,116,1) 60%, rgba(18,7,97,1) 160%);
 }
