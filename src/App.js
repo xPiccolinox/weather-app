@@ -1,8 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
-// import Menu from './Menu/Menu';
-// import WeatherMenu from './WeatherMenu/WeatherMenu';
 import WeatherTile from './WeatherTile/WeatherTile';
+import SearchBar from './SearchBar/SearchBar';
 
 function App() {
 
@@ -10,19 +9,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div className="SearchBar">
-
-        </div>
+        <SearchBar />
         <div className="WeatherTiles">
           <WeatherTile id={1}/>
           <WeatherTile id={2}/>
           <WeatherTile id={3}/>
         </div>
-        {/* <div className="searchBar">
-
-        </div> */}
-        {/* <Menu /> */}
-        {/* <WeatherMenu /> */}
       </div>
     </BrowserRouter>
   );
