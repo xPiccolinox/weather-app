@@ -1,8 +1,9 @@
 :root {
-  --WeatherTilesHeight: calc()
+  --WeatherTiles_width: 55;
+  --WeatherTiles_HeightRatio: 0.5;
 }
 .App {
-  background-image: linear-gradient(170deg, #bda53e 0%, #50a0d1 100%);
+  background-image: linear-gradient(200deg, #2992aa 0%, #821db1 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,16 +12,16 @@
   height: 100vh;
 }
 .WeatherTiles {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2vw;
   position: relative;
   margin-top: 20vh;
-  width: 60vw;
-  height: 25vw;
-  min-width: 90vh;
-  min-height: 37.5vh;
-  max-width: 150vh;
-  max-height: 62.5vh;
+  width: calc(var(--WeatherTiles_width) * 1vw);
+  height: calc(var(--WeatherTiles_width) * var(--WeatherTiles_HeightRatio) * 1vw);
+  min-width: calc(var(--WeatherTiles_width) * 1.5vh);
+  min-height: calc(var(--WeatherTiles_width) * var(--WeatherTiles_HeightRatio) * 1.5vh);
+  max-width: calc(var(--WeatherTiles_width) * 2.5vh);
+  max-height: calc(var(--WeatherTiles_width) * var(--WeatherTiles_HeightRatio) * 2.5vh);
 }

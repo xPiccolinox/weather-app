@@ -1,20 +1,24 @@
+:root {
+  --searchBar_width: 30vw;
+  --searchBar_height: 6vh;
+  --searchBar_resizeRatio: 1.05;
+}
 .searchBar {
-  /* background-color: green; */
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 31vw;
-  height: 9vh;
+  width: calc(var(--searchBar_width) * 1.5);
+  height: calc(var(--searchBar_height) * 1.5);
   top: 0;
   margin-top: 12vh; 
 }
 /* SearchBar Input */
 .searchBarInput {
   background-color: #ffffff70;
-  width: calc(30vw - 8vh);
-  height: 8vh;
-  padding-left: 6%;
+  width: calc(var(--searchBar_width) - var(--searchBar_height));
+  height: var(--searchBar_height);
+  padding-left: 4%;
   border-color: #00000010;
   border-width: 0px 2px 0px 0px;
   border-radius: 0.5vw 0px 0px 0.5vw;
@@ -24,25 +28,26 @@
 }
 .searchBar:hover .searchBarInput {
   background-color: #eee;
-  width: calc((30vw - 8vh) * 1.05);
-  height: calc(8vh * 1.05);
+  width: calc((var(--searchBar_width) - var(--searchBar_height)) * var(--searchBar_resizeRatio));
+  height: calc(var(--searchBar_height) * var(--searchBar_resizeRatio));
 }
 .searchBarInput:focus {
   background-color: #eee;
-  width: calc((30vw - 8vh) * 1.05);
-  height: calc(8vh * 1.05);
+  width: calc((var(--searchBar_width) - var(--searchBar_height)) * var(--searchBar_resizeRatio));
+  height: calc(var(--searchBar_height) * var(--searchBar_resizeRatio));
   outline: none;
   text-decoration: none;
   transition: 0.075s ease-in-out;
 }
 .searchBarInput:focus:active {
   background-color: #ffffffb0;
+  height: var(--searchBar_height);
 }
 /* SearchBar Button */
 .searchBarButton {
   background-color: #ffffff70;
-  width: 8vh;
-  height: 8vh;
+  width: var(--searchBar_height);
+  height: var(--searchBar_height);
   border: none;
   border-radius: 0px 0.5vw 0.5vw 0px;
   box-sizing: border-box;
@@ -50,13 +55,13 @@
 }
 .searchBar:hover .searchBarButton {
   background-color: #eee;
-  width: calc(8vh * 1.05);
-  height: calc(8vh * 1.05);
+  width: calc(var(--searchBar_height) * var(--searchBar_resizeRatio));
+  height: calc(var(--searchBar_height) * var(--searchBar_resizeRatio));
 }
 .searchBarInput:focus + .searchBarButton {
   background-color: #eee;
-  width: calc(8vh * 1.05);
-  height: calc(8vh * 1.05);
+  width: calc(var(--searchBar_height) * var(--searchBar_resizeRatio));
+  height: calc(var(--searchBar_height) * var(--searchBar_resizeRatio));
 }
 .searchBarButton:hover {
   cursor: pointer;
@@ -64,4 +69,5 @@
 }
 .searchBar:hover .searchBarButton:active {
   background-color: #ffffffb0;
+  height: var(--searchBar_height);
 }

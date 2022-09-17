@@ -13,6 +13,8 @@ function App() {
         <div className="WeatherTiles">
           <WeatherTile id={1}/>
           <WeatherTile id={2}/>
+          <WeatherTile id={2}/>
+          <WeatherTile id={3}/>
           <WeatherTile id={3}/>
         </div>
       </div>
