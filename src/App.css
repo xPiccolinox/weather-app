@@ -25,3 +25,12 @@
   max-width: calc(var(--WeatherTiles_width) * 2.5vh);
   max-height: calc(var(--WeatherTiles_width) * var(--WeatherTiles_HeightRatio) * 2.5vh);
 }
+.tileWeather_0 {
+  background: linear-gradient(170deg, rgba(1, 159, 255, 1) 0%, rgba(72, 209, 244, 1) 35%, rgba(171, 236, 240, 1) 70%);
+}
+.tileWeather_1 {
+  background: linear-gradient(170deg, rgba(186,49,49,1) 0%, rgba(203,77,56,1) 35%, rgba(236,117,44,1) 70%);
+}
+.tileWeather_2 {
+  background: linear-gradient(170deg, rgba(26,1,79,1) 0%, rgba(43,7,120,1) 35%, rgba(58,12,156,1) 70%);
+}

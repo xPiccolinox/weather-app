@@ -18,12 +18,12 @@
   background-color: #ffffff70;
   width: calc(var(--searchBar_width) - var(--searchBar_height));
   height: var(--searchBar_height);
-  padding-left: 4%;
+  padding-left: 3.6%;
   border-color: #00000010;
   border-width: 0px 2px 0px 0px;
   border-radius: 0.5vw 0px 0px 0.5vw;
   box-sizing: border-box;
-  font-size: 2.5vh;
+  font-size: 2.4vh;
   transition: 0.15s ease-in-out;
 }
 .searchBar:hover .searchBarInput {
