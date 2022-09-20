@@ -25,24 +25,72 @@
   width: 100%;
   height: 30%;
 }
-.weatherTileMain .weatherInfo_date h1 {
+.weatherTileMain .weatherInfo_date div {
   background-color: pink;
   width: 100%;
   height: 100%;
   margin: 0;
 }
+.weatherTileMain .weatherInfo_date .day {
+  
+}
+.weatherTileMain .weatherInfo_date .dayName {
+  background-color: green;
+  grid-area: 2 / 1 / 3 / 3;
+}
+.weatherTileMain .weatherInfo_date .time {
+  
+}
 .weatherTileMain .weatherInfo_img {
   background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   width: 100%;
   height: 40%;
 }
+.weatherTileMain .weatherInfo_img img {
+  height: 100%;
+}
 .weatherTileMain .weatherInfo_temp {
   background-color: cyan;
+  display: grid;
+  grid-template: 50% 50% / 50% 50%;
+  grid-auto-flow: column;
   width: 100%;
   height: 30%;
 }
+.weatherTileMain .weatherInfo_temp div {
+  background-color: purple;
+  width: 100%;
+  height: 100%;
+}
+.weatherTileMain .weatherInfo_temp .temp {
+  
+}
+.weatherTileMain .weatherInfo_temp .tempName {
+  
+}
+.weatherTileMain .weatherInfo_temp .maxTemp {
+  
+}
+.weatherTileMain .weatherInfo_temp .minTemp {
+  
+}
 .weatherTileMain .weatherHourlyInfo {
   background-color: orange;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   width: 100%;
   height: 30%;
+}
+.weatherTileMain .weatherHourlyInfo div {
+  background-color: green;
+  width: 4vw;
+  height: 4vw;
+}
+.weatherTileMain .weatherHourlyInfo .separation {
+  background-color: grey;
+  width: 1px;
 }
