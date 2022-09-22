@@ -1,3 +1,14 @@
+:root {
+  --wtmInfoFS_Day: 0.032;
+  --wtmInfoFS_Date: 0.016;
+  --wtmInfoFS_Time: 0.032;
+  --wtmInfoFS_Temp: 0.046;
+  --wtmInfoFS_TempName: 0.032;
+  --wtmInfoFS_MaxTemp: 0.032;
+  --wtmInfoFS_MinTemp: 0.032;
+
+  --wtmInfoTextShadow: 1px 3px 2px #00000066;
+}
 .weatherTileMain {
   grid-area: 1 / 1 / 3 / 2;
 }
@@ -9,40 +20,50 @@
   position: relative;
   width: 100%;
   height: 100%;
+  padding: 8% 8% 0 8%;
+  box-sizing: border-box;
   border-radius: 0.3vw;
   box-shadow: 0px 0px 12px -2px #000;
+  color: #fff;
   overflow: hidden;
 }
 .weatherTileMain .weatherInfo {
-  background-color: green;
+  /* background-color: green; */
   width: 100%;
   height: 70%;
 }
+/* Weather date & time */
 .weatherTileMain .weatherInfo_date {
-  background-color: purple;
+  /* background-color: purple; */
   display: grid;
   grid-template: 50% 50% / 50% 50%;
   width: 100%;
   height: 30%;
 }
 .weatherTileMain .weatherInfo_date div {
-  background-color: pink;
   width: 100%;
   height: 100%;
   margin: 0;
 }
 .weatherTileMain .weatherInfo_date .day {
-  
+  font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_Day)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_Day)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_Day)));
+  font-weight: 700;
+  text-shadow: var(--wtmInfoTextShadow);
 }
-.weatherTileMain .weatherInfo_date .dayName {
-  background-color: green;
+.weatherTileMain .weatherInfo_date .date {
   grid-area: 2 / 1 / 3 / 3;
+  color: #ffffffb3;
+  font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_Date)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_Date)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_Date)));
+  text-shadow: var(--wtmInfoTextShadow);
 }
 .weatherTileMain .weatherInfo_date .time {
-  
+  font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_Time)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_Time)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_Time)));
+  font-weight: 700;
+  text-shadow: var(--wtmInfoTextShadow);
 }
+/* Weather Image */
 .weatherTileMain .weatherInfo_img {
-  background-color: blue;
+  /* background-color: blue; */
   display: flex;
   justify-content: center;
   align-content: center;
@@ -51,9 +72,11 @@
 }
 .weatherTileMain .weatherInfo_img img {
   height: 100%;
+  filter: drop-shadow(var(--wtmInfoTextShadow))
 }
+/* Weather Temperature */
 .weatherTileMain .weatherInfo_temp {
-  background-color: cyan;
+  /* background-color: cyan; */
   display: grid;
   grid-template: 50% 50% / 50% 50%;
   grid-auto-flow: column;
@@ -61,24 +84,33 @@
   height: 30%;
 }
 .weatherTileMain .weatherInfo_temp div {
-  background-color: purple;
+  /* background-color: purple; */
   width: 100%;
   height: 100%;
 }
 .weatherTileMain .weatherInfo_temp .temp {
-  
+  font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_Temp)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_Temp)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_Temp)));
+  font-weight: 600;
+  text-shadow: var(--wtmInfoTextShadow);
 }
 .weatherTileMain .weatherInfo_temp .tempName {
-  
+  color: #ffffffbb;
+  font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_TempName)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_TempName)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_TempName)));
+  font-weight: 300;
+  text-shadow: var(--wtmInfoTextShadow);
 }
 .weatherTileMain .weatherInfo_temp .maxTemp {
-  
+  font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_MaxTemp)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_MaxTemp)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_MaxTemp)));
+  font-weight: 600;
+  text-shadow: var(--wtmInfoTextShadow);
 }
 .weatherTileMain .weatherInfo_temp .minTemp {
-  
+  font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_MinTemp)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_MinTemp)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_MinTemp)));
+  font-weight: 600;
+  text-shadow: var(--wtmInfoTextShadow);
 }
 .weatherTileMain .weatherHourlyInfo {
-  background-color: orange;
+  /* background-color: orange; */
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -86,11 +118,11 @@
   height: 30%;
 }
 .weatherTileMain .weatherHourlyInfo div {
-  background-color: green;
+  /* background-color: green; */
   width: 4vw;
   height: 4vw;
 }
 .weatherTileMain .weatherHourlyInfo .separation {
-  background-color: grey;
+  /* background-color: grey; */
   width: 1px;
 }
