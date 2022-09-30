@@ -2,10 +2,11 @@
   --wtmInfoFS_Day: 0.032;
   --wtmInfoFS_Date: 0.016;
   --wtmInfoFS_Time: 0.032;
-  --wtmInfoFS_Temp: 0.046;
-  --wtmInfoFS_TempName: 0.032;
-  --wtmInfoFS_MaxTemp: 0.032;
-  --wtmInfoFS_MinTemp: 0.032;
+  --wtmInfoFS_Period: 0.018;
+  --wtmInfoFS_Temp: 0.042;
+  --wtmInfoFS_TempName: 0.028;
+  --wtmInfoFS_MaxTemp: 0.028;
+  --wtmInfoFS_MinTemp: 0.028;
 
   --wtmInfoTextShadow: 1px 3px 2px #00000066;
 }
@@ -20,25 +21,23 @@
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 8% 8% 0 8%;
-  box-sizing: border-box;
   border-radius: 0.3vw;
   box-shadow: 0px 0px 12px -2px #000;
   color: #fff;
   overflow: hidden;
 }
 .weatherTileMain .weatherInfo {
-  /* background-color: green; */
+  padding: 8% 8% 0 8%;
+  box-sizing: border-box;
   width: 100%;
   height: 70%;
 }
 /* Weather date & time */
 .weatherTileMain .weatherInfo_date {
-  /* background-color: purple; */
   display: grid;
-  grid-template: 50% 50% / 50% 50%;
+  grid-template: 2fr 1fr / 1fr 1fr;
   width: 100%;
-  height: 30%;
+  height: 20%;
 }
 .weatherTileMain .weatherInfo_date div {
   width: 100%;
@@ -57,16 +56,23 @@
   text-shadow: var(--wtmInfoTextShadow);
 }
 .weatherTileMain .weatherInfo_date .time {
+  display: flex;
+  justify-content: flex-end;
   font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_Time)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_Time)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_Time)));
   font-weight: 700;
   text-shadow: var(--wtmInfoTextShadow);
 }
+.weatherTileMain .weatherInfo_date .time sup {
+  margin-left: 4%;
+  font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_Period)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_Period)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_Period)));
+  font-weight: 400;
+}
 /* Weather Image */
 .weatherTileMain .weatherInfo_img {
-  /* background-color: blue; */
   display: flex;
   justify-content: center;
   align-content: center;
+  padding: 10% 0;
   width: 100%;
   height: 40%;
 }
@@ -76,53 +82,135 @@
 }
 /* Weather Temperature */
 .weatherTileMain .weatherInfo_temp {
-  /* background-color: cyan; */
   display: grid;
   grid-template: 50% 50% / 50% 50%;
   grid-auto-flow: column;
   width: 100%;
   height: 30%;
 }
-.weatherTileMain .weatherInfo_temp div {
-  /* background-color: purple; */
+.weatherTileMain .weatherInfo_temp > div {
+  display: flex;
   width: 100%;
   height: 100%;
 }
+.weatherTileMain .weatherInfo_temp .tempDiv {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 1em;
+  width: 100%;
+  padding: 2% 0;
+}
+.weatherTileMain .weatherInfo_temp .tempDiv .tempDegree {
+  align-self: flex-start;
+  font-size: 0.75em;
+  font-weight: 400;
+}
+.weatherTileMain .weatherInfo_temp .tempDiv .tempCelcius {
+  align-self: flex-end;
+  font-size: 0.75em;
+  font-weight: 400;
+}
 .weatherTileMain .weatherInfo_temp .temp {
+  align-items: flex-end;
+  justify-content: flex-start;
   font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_Temp)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_Temp)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_Temp)));
   font-weight: 600;
   text-shadow: var(--wtmInfoTextShadow);
 }
+.weatherTileMain .weatherInfo_temp .temp .tempDiv {
+  justify-content: flex-start;
+}
 .weatherTileMain .weatherInfo_temp .tempName {
+  align-items: flex-start;
+  justify-content: flex-start;
   color: #ffffffbb;
   font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_TempName)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_TempName)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_TempName)));
   font-weight: 300;
   text-shadow: var(--wtmInfoTextShadow);
 }
 .weatherTileMain .weatherInfo_temp .maxTemp {
+  align-items: flex-end;
+  justify-content: flex-end;
   font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_MaxTemp)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_MaxTemp)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_MaxTemp)));
   font-weight: 600;
   text-shadow: var(--wtmInfoTextShadow);
 }
+.weatherTileMain .weatherInfo_temp .maxTemp .tempDiv .maxTempArrow {
+  display: block;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  margin-right: 24%;
+  border-bottom: 16px solid #1DCC00;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  filter: drop-shadow(1px 2px 1px #00000066);
+}
 .weatherTileMain .weatherInfo_temp .minTemp {
+  /* background-color: lime; */
+  align-items: flex-start;
+  justify-content: flex-end;
   font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_MinTemp)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_MinTemp)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_MinTemp)));
   font-weight: 600;
   text-shadow: var(--wtmInfoTextShadow);
 }
+.weatherTileMain .weatherInfo_temp .minTemp .tempDiv .minTempArrow {
+  display: block;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  margin-right: 24%;
+  border-top: 16px solid #F43D3D;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  filter: drop-shadow(1px 2px 1px #00000066);
+}
+/* Weather Hourly Info */
 .weatherTileMain .weatherHourlyInfo {
-  /* background-color: orange; */
+  background: linear-gradient(0deg, #0000004D 0%, transparent 100%);
   display: flex;
   align-items: flex-end;
   justify-content: center;
   width: 100%;
   height: 30%;
 }
-.weatherTileMain .weatherHourlyInfo div {
-  /* background-color: green; */
+.weatherTileMain .weatherHourlyInfo .weatherHourlyTile {
+  position: relative;
   width: 4vw;
   height: 4vw;
 }
-.weatherTileMain .weatherHourlyInfo .separation {
-  /* background-color: grey; */
-  width: 1px;
+.weatherTileMain .weatherHourlyInfo .weatherHourlyTile > img {
+  position: absolute;
+  width: 50%;
+  top: 6%;
+  left: 6%;
+}
+.weatherTileMain .weatherHourlyInfo .weatherHourlyTile .tempDiv {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  height: 1em;
+}
+.weatherTileMain .weatherHourlyInfo .weatherHourlyTile .timeDiv {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 6%;
+  right: 6%;
+  height: 1em;
+  font-weight: 600;
+}
+.weatherTileMain .weatherHourlyInfo .weatherHourlyTile .timeDiv sup {
+  font-size: 0.75em;
+  font-weight: 400;
+}
+.weatherTileMain .weatherHourlyInfo .weatherHourlySeparation {
+  background: linear-gradient(0deg, #ffffff 0%, transparent 100%);
+  width: 2px;
+  height: 4vw;
 }
