@@ -8,7 +8,8 @@
   --wtmInfoFS_MaxTemp: 0.028;
   --wtmInfoFS_MinTemp: 0.028;
 
-  --wtmInfoTextShadow: 1px 3px 2px #00000066;
+  --wtmInfoTextShadow: 2px 2px 1px #00000066;
+  --wtmHourlyTextShadow: 1px 2px 1px #00000066;
 }
 .weatherTileMain {
   grid-area: 1 / 1 / 3 / 2;
@@ -62,7 +63,7 @@
   font-weight: 700;
   text-shadow: var(--wtmInfoTextShadow);
 }
-.weatherTileMain .weatherInfo_date .time sup {
+.weatherTileMain .weatherInfo_date .time .period {
   margin-left: 4%;
   font-size: clamp(calc(var(--WeatherTiles_width) * 1.5vh * var(--wtmInfoFS_Period)), calc(var(--WeatherTiles_width) * 1vw * var(--wtmInfoFS_Period)), calc(var(--WeatherTiles_width) * 2.5vh * var(--wtmInfoFS_Period)));
   font-weight: 400;
@@ -142,9 +143,9 @@
   width: 0px;
   height: 0px;
   margin-right: 24%;
-  border-bottom: 16px solid #1DCC00;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
+  border-bottom: 14px solid #1DCC00;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
   filter: drop-shadow(1px 2px 1px #00000066);
 }
 .weatherTileMain .weatherInfo_temp .minTemp {
@@ -161,9 +162,9 @@
   width: 0px;
   height: 0px;
   margin-right: 24%;
-  border-top: 16px solid #F43D3D;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
+  border-top: 14px solid #F43D3D;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
   filter: drop-shadow(1px 2px 1px #00000066);
 }
 /* Weather Hourly Info */
@@ -182,9 +183,10 @@
 }
 .weatherTileMain .weatherHourlyInfo .weatherHourlyTile > img {
   position: absolute;
-  width: 50%;
+  width: 46%;
   top: 6%;
-  left: 6%;
+  left: 8%;
+  filter: drop-shadow(var(--wtmHourlyTextShadow));
 }
 .weatherTileMain .weatherHourlyInfo .weatherHourlyTile .tempDiv {
   display: flex;
@@ -192,8 +194,22 @@
   justify-content: flex-end;
   position: absolute;
   top: 50%;
-  right: 6%;
+  right: 8%;
   height: 1em;
+  font-weight: 600;
+  text-shadow: var(--wtmHourlyTextShadow);
+}
+.weatherTileMain .weatherHourlyInfo .weatherHourlyTile .tempDiv .tempDegree {
+  align-self: flex-start;
+  font-size: 0.75em;
+  font-weight: 300;
+  line-height: 0.95em;
+}
+.weatherTileMain .weatherHourlyInfo .weatherHourlyTile .tempDiv .tempCelcius {
+  align-self: flex-end;
+  font-size: 0.75em;
+  font-weight: 300;
+  line-height: 0.95em;
 }
 .weatherTileMain .weatherHourlyInfo .weatherHourlyTile .timeDiv {
   display: flex;
@@ -201,13 +217,16 @@
   justify-content: flex-end;
   position: absolute;
   bottom: 6%;
-  right: 6%;
+  right: 8%;
   height: 1em;
   font-weight: 600;
+  text-shadow: var(--wtmHourlyTextShadow);
 }
-.weatherTileMain .weatherHourlyInfo .weatherHourlyTile .timeDiv sup {
-  font-size: 0.75em;
+.weatherTileMain .weatherHourlyInfo .weatherHourlyTile .timeDiv .period {
+  font-size: 0.65em;
   font-weight: 400;
+  line-height: 0.8em;
+  margin-left: 6%;
 }
 .weatherTileMain .weatherHourlyInfo .weatherHourlySeparation {
   background: linear-gradient(0deg, #ffffff 0%, transparent 100%);
