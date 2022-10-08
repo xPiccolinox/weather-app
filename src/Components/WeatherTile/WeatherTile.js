@@ -11,24 +11,22 @@ const WeatherTile = (props) => {
     <div className={className}>
       <div className="weatherInfo"> 
         <div className="weatherInfo_date">
-          <div className="day">Today</div>
+          <div className="day">Tomorrow</div>
           <div className="date">18 September 2022</div>
           <div className="time">12:00
             <div className="period">AM</div>
           </div>
         </div>
-        <div className="weatherInfo_img">
-          <img src={img1} alt="weatherIcon"/>
-        </div>
         <div className="weatherInfo_temp">
+          <img src={img1} alt="weatherIcon"/>
           <div className="temp">
             <div className="tempDiv">
               29
               <div className="tempDegree">&#176;</div>
               <div className="tempCelcius">c</div>
             </div>
+            <div className="tempName">Sunny</div>
           </div>
-          <div className="tempName">Sunny</div>
         </div>
       </div>
       <div className="weatherHourlyInfo">
